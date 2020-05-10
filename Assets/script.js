@@ -94,7 +94,7 @@ const questions = [
     ]
   },
   {
-    question: 'Which former American physicist claimed to who have work on a projects reverse engineering extraterrestrial craft?',
+    question: 'Which former American physicist claimed to who have work on projects reverse engineering extraterrestrial space craft?',
     answers: [
       { text: 'Bob Barker', correct: false },
       { text: 'Ricky Bobby', correct: false },
