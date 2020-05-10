@@ -87,7 +87,7 @@ function clearStatusClass(element) {
 // questions and answer banks
 const questions = [
   {
-    question: 'True or False: In the Star Wars Univers, Jango & Boba Fett are not considered REAL Mandalorians.',
+    question: 'True or False: In the Star Wars universe, Jango & Boba Fett are not considered REAL Mandalorians.',
     answers: [
       { text: 'True', correct: true },
       { text: 'False', correct: false }
