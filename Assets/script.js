@@ -112,7 +112,7 @@ const questions = [
     ]
   },
   {
-    question: "Is pimpin', EZ?",
+    question: "Is Cheez Whiz real cheese?",
     answers: [
       { text: 'Nah', correct: true },
       { text: 'Yeah BoI', correct: true }
