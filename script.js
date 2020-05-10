@@ -1,3 +1,5 @@
+
+// calling on elements by their IDs to initiate their respective functions
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
@@ -6,13 +8,15 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', startGame)
+// mouse event that starts the quick when the start button is clicked
+startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
 })
 
-function startGame() {
+// function to start the quiz
+function startQuiz() {
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
@@ -20,11 +24,13 @@ function startGame() {
   setNextQuestion()
 }
 
+// function to move onto the next question once the current question is answered
 function setNextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+// function to display the question ,answer selection, and function call based on use input
 function showQuestion(question) {
   questionElement.innerText = question.question
   question.answers.forEach(answer => {
@@ -39,6 +45,7 @@ function showQuestion(question) {
   })
 }
 
+// function to reset/clear the quiz to start over
 function resetState() {
   clearStatusClass(document.body)
   nextButton.classList.add('hide')
@@ -46,7 +53,6 @@ function resetState() {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
 }
-
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
@@ -61,7 +67,7 @@ function selectAnswer(e) {
     startButton.classList.remove('hide')
   }
 }
-
+// function to set the status of each element based on input
 function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
@@ -71,11 +77,14 @@ function setStatusClass(element, correct) {
   }
 }
 
+// function to clear the statuses that were applied to them based on user input
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
 }
 
+
+// questions and answer banks
 const questions = [
   {
     question: 'True or False: In the Star Wars Univers, Jango & Boba Fett are not considered REAL Mandalorians.',
@@ -90,7 +99,7 @@ const questions = [
       { text: 'Bob Barker', correct: false },
       { text: 'Ricky Bobby', correct: false },
       { text: 'Bob Lazar', correct: true },
-      { text: 'Fun Fun Function', correct: false }
+      { text: 'Robert Pin', correct: false }
     ]
   },
   {
